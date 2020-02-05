@@ -10,12 +10,28 @@
 <script src="{{ asset("") }}app-assets/vendors/js/extensions/pace.min.js" type="text/javascript"></script>
 <!-- BEGIN VENDOR JS-->
 <!-- BEGIN PAGE VENDOR JS-->
-<script src="{{ asset("") }}app-assets/vendors/js/charts/chart.min.js" type="text/javascript"></script>
+<script src="{{ asset('app-assets/vendors/js/charts/amcharts/core.js') }}"></script>
+<script src="{{ asset('app-assets/vendors/js/charts/amcharts/charts.js') }}"></script>
+<script src="{{ asset('app-assets/vendors/js/charts/amcharts/animated.js') }}"></script>
+<script src="{{ asset('app-assets/vendors/js/charts/amcharts/theme.dark.js') }}"></script>
+<script src="{{ asset("") }}app-assets/vendors/js/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="{{ asset("") }}app-assets/vendors/js/datatables/dataTables.bootstrap4.min.js" type="text/javascript"></script>
+<script src="{{ asset("") }}app-assets/vendors/js/sweetalert/sweetalert.min.js"></script>
+<script src="{{ asset("") }}app-assets/vendors/js/socket-io/socket.io.js"></script>
 <!-- END PAGE VENDOR JS-->
 <!-- BEGIN ROBUST JS-->
 <script src="{{ asset("") }}app-assets/js/core/app-menu.js" type="text/javascript"></script>
 <script src="{{ asset("") }}app-assets/js/core/app.js" type="text/javascript"></script>
 <!-- END ROBUST JS-->
 <!-- BEGIN PAGE LEVEL JS-->
-<script src="{{ asset("") }}app-assets/js/scripts/pages/dashboard-lite.js" type="text/javascript"></script>
+<script src="{{ asset("") }}assets/js/scripts.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL JS-->
+<script>
+    let socket = io.connect("{{ env('APP_URL') }}:{{ env('SOCKET_PORT') }}");
+
+    socket.on('connected', function(data){
+        console.log(data);
+    });
+    
+    $('.my-datatables').DataTable();
+</script>

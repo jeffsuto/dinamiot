@@ -2,8 +2,8 @@
 <link rel="apple-touch-icon" sizes="76x76" href="{{ asset("") }}app-assets/images/ico/apple-icon-76.png">
 <link rel="apple-touch-icon" sizes="120x120" href="{{ asset("") }}app-assets/images/ico/apple-icon-120.png">
 <link rel="apple-touch-icon" sizes="152x152" href="{{ asset("") }}app-assets/images/ico/apple-icon-152.png">
-<link rel="shortcut icon" type="image/x-icon" href="{{ asset("") }}app-assets/images/ico/favicon.ico">
-<link rel="shortcut icon" type="image/png" href="{{ asset("") }}app-assets/images/ico/favicon-32.png">
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset("") }}assets/images/dinamiot-single-mini.svg">
+<link rel="shortcut icon" type="image/png" href="{{ asset("") }}assets/images/dinamiot-single-mini.svg">
 
 <!-- BEGIN VENDOR CSS-->
 <link rel="stylesheet" type="text/css" href="{{ asset("") }}app-assets/css/bootstrap.css">
@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="{{ asset("") }}app-assets/fonts/icomoon.css">
 <link rel="stylesheet" type="text/css" href="{{ asset("") }}app-assets/fonts/flag-icon-css/css/flag-icon.min.css">
 <link rel="stylesheet" type="text/css" href="{{ asset("") }}app-assets/vendors/css/extensions/pace.css">
+<link rel="stylesheet" type="text/css" href="{{ asset("") }}app-assets/vendors/css/datatables/dataTables.bootstrap4.min.css">
 <!-- END VENDOR CSS-->
 <!-- BEGIN ROBUST CSS-->
 <link rel="stylesheet" type="text/css" href="{{ asset("") }}app-assets/css/bootstrap-extended.css">

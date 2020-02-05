@@ -61,78 +61,78 @@
     *               Employee Satisfaction               *
     ****************************************************/
     //Get the context of the Chart canvas element we want to select
-    var ctx1 = document.getElementById("emp-satisfaction").getContext("2d");
+    // var ctx1 = document.getElementById("emp-satisfaction").getContext("2d");
 
-    // Create Linear Gradient
-    var white_gradient = ctx1.createLinearGradient(0, 0, 0,400);
-    white_gradient.addColorStop(0, 'rgba(255,255,255,0.5)');
-    white_gradient.addColorStop(1, 'rgba(255,255,255,0)');
+    // // Create Linear Gradient
+    // var white_gradient = ctx1.createLinearGradient(0, 0, 0,400);
+    // white_gradient.addColorStop(0, 'rgba(255,255,255,0.5)');
+    // white_gradient.addColorStop(1, 'rgba(255,255,255,0)');
 
-    // Chart Options
-    var empSatOptions = {
-        responsive: true,
-        maintainAspectRatio: false,
-        datasetStrokeWidth : 3,
-        pointDotStrokeWidth : 4,
-        tooltipFillColor: "rgba(0,0,0,0.8)",
-        legend: {
-            display: false,
-        },
-        hover: {
-            mode: 'label'
-        },
-        scales: {
-            xAxes: [{
-                display: false,
-            }],
-            yAxes: [{
-                display: false,
-                ticks: {
-                    min: 0,
-                    max: 85
-                },
-            }]
-        },
-        title: {
-            display: false,
-            fontColor: "#FFF",
-            fullWidth: false,
-            fontSize: 40,
-            text: '82%'
-        }
-    };
+    // // Chart Options
+    // var empSatOptions = {
+    //     responsive: true,
+    //     maintainAspectRatio: false,
+    //     datasetStrokeWidth : 3,
+    //     pointDotStrokeWidth : 4,
+    //     tooltipFillColor: "rgba(0,0,0,0.8)",
+    //     legend: {
+    //         display: false,
+    //     },
+    //     hover: {
+    //         mode: 'label'
+    //     },
+    //     scales: {
+    //         xAxes: [{
+    //             display: false,
+    //         }],
+    //         yAxes: [{
+    //             display: false,
+    //             ticks: {
+    //                 min: 0,
+    //                 max: 85
+    //             },
+    //         }]
+    //     },
+    //     title: {
+    //         display: false,
+    //         fontColor: "#FFF",
+    //         fullWidth: false,
+    //         fontSize: 40,
+    //         text: '82%'
+    //     }
+    // };
 
-    // Chart Data
-    var empSatData = {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
-        datasets: [{
-            label: "Employees",
-            data: [28, 35, 36, 48, 46, 42, 60],
-            backgroundColor: white_gradient,
-            borderColor: "rgba(255,255,255,1)",
-            borderWidth: 2,
-            strokeColor : "#ff6c23",
-            pointColor : "#fff",
-            pointBorderColor: "rgba(255,255,255,1)",
-            pointBackgroundColor: "#3BAFDA",
-            pointBorderWidth: 2,
-            pointHoverBorderWidth: 2,
-            pointRadius: 5,
-        }]
-    };
+    // // Chart Data
+    // var empSatData = {
+    //     labels: ["January", "February", "March", "April", "May", "June", "July"],
+    //     datasets: [{
+    //         label: "Employees",
+    //         data: [28, 35, 36, 48, 46, 42, 60],
+    //         backgroundColor: white_gradient,
+    //         borderColor: "rgba(255,255,255,1)",
+    //         borderWidth: 2,
+    //         strokeColor : "#ff6c23",
+    //         pointColor : "#fff",
+    //         pointBorderColor: "rgba(255,255,255,1)",
+    //         pointBackgroundColor: "#3BAFDA",
+    //         pointBorderWidth: 2,
+    //         pointHoverBorderWidth: 2,
+    //         pointRadius: 5,
+    //     }]
+    // };
 
-    var empSatconfig = {
-        type: 'line',
+    // var empSatconfig = {
+    //     type: 'line',
 
-        // Chart Options
-        options : empSatOptions,
+    //     // Chart Options
+    //     options : empSatOptions,
 
-        // Chart Data
-        data : empSatData
-    };
+    //     // Chart Data
+    //     data : empSatData
+    // };
 
-    // Create the chart
-    var areaChart = new Chart(ctx1, empSatconfig);
+    // // Create the chart
+    // var areaChart = new Chart(ctx1, empSatconfig);
 
     // Chart Data
     var userPageVisitData = {

@@ -9,3 +9,125 @@ NOTE:
 ------
 PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
 WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+.glow-success {
+	-webkit-animation: glow-success 1s ease-in-out infinite alternate;
+	-moz-animation: glow-success 1s ease-in-out infinite alternate;
+	animation: glow-success 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow-success {
+	from {
+		text-shadow: 0 0 30px #00BFA5, 0 0 40px #00BFA5, 0 0 50px #00BFA5, 0 0 60px #00BFA5, 0 0 70px #00BFA5;
+	}
+
+	to {
+		text-shadow: 0 0 30px #1DE9B6, 0 0 40px #1DE9B6, 0 0 50px #1DE9B6, 0 0 60px #1DE9B6, 0 0 70px #1DE9B6;
+	}
+}
+
+.glow-warning {
+	-webkit-animation: glow-warning 1s ease-in-out infinite alternate;
+	-moz-animation: glow-warning 1s ease-in-out infinite alternate;
+	animation: glow-warning 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow-warning {
+	from {
+		text-shadow: 0 0 30px #FFCE54, 0 0 40px #FFCE54, 0 0 50px #FFCE54, 0 0 60px #FFCE54, 0 0 70px #FFCE54;
+	}
+
+	to {
+		text-shadow: 0 0 30px #F5A90B, 0 0 40px #F5A90B, 0 0 50px #F5A90B, 0 0 60px #F5A90B, 0 0 70px #F5A90B;
+	}
+}
+
+.glow-danger {
+	-webkit-animation: glow-danger 1s ease-in-out infinite alternate;
+	-moz-animation: glow-danger 1s ease-in-out infinite alternate;
+	animation: glow-danger 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow-danger {
+	from {
+		text-shadow: 0 0 30px #FF1744, 0 0 40px #FF1744, 0 0 50px #FF1744, 0 0 60px #FF1744, 0 0 70px #FF1744;
+	}
+
+	to {
+		text-shadow: 0 0 30px #D50000, 0 0 40px #D50000, 0 0 50px #D50000, 0 0 60px #D50000, 0 0 70px #D50000;
+	}
+}
+
+.scroll {
+    overflow-y: auto;
+}
+
+.callout {
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #eee;
+	border-left-width: 5px;
+	border-radius: 3px;
+}
+.callout h4 {
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+.callout p:last-child {
+	margin-bottom: 0;
+}
+.callout code {
+	border-radius: 3px;
+}
+.callout + .bs-callout {
+	margin-top: -5px;
+}
+
+.callout-default {
+	border-left-color: #777;
+}
+.callout-default h4 {
+	color: #777;
+}
+
+.callout-primary {
+	border-left-color: #428bca;
+}
+.callout-primary h4 {
+	color: #428bca;
+}
+
+.callout-success {
+	border-left-color: #5cb85c;
+}
+.callout-success h4 {
+	color: #5cb85c;
+}
+
+.callout-danger {
+	border-left-color: #d9534f;
+}
+.callout-danger h4 {
+	color: #d9534f;
+}
+
+.callout-warning {
+	border-left-color: #f0ad4e;
+}
+.callout-warning h4 {
+	color: #f0ad4e;
+}
+
+.callout-info {
+	border-left-color: #5bc0de;
+}
+.callout-info h4 {
+	color: #5bc0de;
+}
+
+.callout-bdc {
+	border-left-color: #29527a;
+}
+.callout-bdc h4 {
+	color: #29527a;
+}
+  
