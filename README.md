@@ -3,9 +3,29 @@ Dinamiot merupakan web dashboard dan web server untuk monitoring perangkat IoT. 
 
 - [Dinamiot](#dinamiot)
     - [Installation](#installation)
+        - [Clone Project](#clone-project)
+        - [Update Composer](#update-composer)
+        - [Configure Env](#configure-env)
         
 ## Installation
 Pastikan anda sudah memiliki MongoDB PHP Driver. Anda bisa melihat petunjuk instalasi di http://php.net/manual/en/mongodb.installation.php
 
-#### Clone Project
-```$ https://github.com/jeffsuto/dinamiot.git```
+### Clone Project
+```
+$ https://github.com/jeffsuto/dinamiot.git
+```
+### Update Composer
+Setelah melakukan cloning project, masuklah ke direktori project dinamiot. Setelah masuk ke dalam direktori, jalankan perintah dibawah ini untuk mengupdate package laravel.
+```
+$ composer update
+```
+### Configure Env
+Pada file ```.env.example```, ubah nama file tersebut menjadi ```.env```. Lakukan konfigurasi file .env berikut jika terdapat ketidak sesuaian dengan lingkungan sistem anda.
+```
+DB_CONNECTION=mongodb
+DB_HOST=127.0.0.1
+DB_PORT=27017
+DB_DATABASE=db_devices_monitoring
+DB_USERNAME=
+DB_PASSWORD=
+```
