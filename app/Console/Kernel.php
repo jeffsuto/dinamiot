@@ -28,6 +28,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        dd(route('web.devices.index'));
         // check if device is disconnected
         $schedule->call(function(){
             $devices = Device::where('state', 1)->get();

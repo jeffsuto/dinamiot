@@ -27,8 +27,9 @@
 <!-- BEGIN PAGE LEVEL JS-->
 <script src="{{ asset("") }}assets/js/scripts.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL JS-->
+
 <script>
-    let socket = io.connect("{{ env('APP_URL') }}:{{ env('SOCKET_PORT') }}");
+    let socket = io.connect("{{ explode(':', env('APP_URL'))[1] }}:{{ env('SOCKET_PORT') }}");
 
     socket.on('connected', function(data){
         console.log(data);
