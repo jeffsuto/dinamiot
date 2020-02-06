@@ -327,11 +327,11 @@ class DeviceController extends Controller
         $last_component = Component::orderBy('_id', 'desc')->first();
 
         if (empty($last_component)) {
-            $current_code = 'c1_'.explode(' ', strtolower($name))[0];
+            $current_code = 'c1_'.str_replace(' ', '_', strtolower($name));
         }else {
             $splited = explode("_", $last_component->code);
             $sequence_to = substr($splited[0], 1);
-            $current_code = 'c'.($sequence_to + 1).'_'.explode(' ', strtolower($name))[0];
+            $current_code = 'c'.($sequence_to + 1).'_'.str_replace(' ', '_', strtolower($name));
         }
 
         return $current_code;
