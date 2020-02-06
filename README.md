@@ -44,7 +44,7 @@ $ npm install dotenv
 ### Configure Env
 Rename ```.env.example``` file to ```.env```
 #### Configure App Url
-fill in the APP_URL value according to your project host.
+Fill in the APP_URL value according to your project host.
 ```
 APP_URL=
 ```
