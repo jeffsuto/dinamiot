@@ -10,7 +10,7 @@ Dinamiot is a web dashboard and web server for monitoring realtime IoT devices. 
         - [Configure Env](#configure-env)
         - [Finishing](#finishing)
     - [Useage](#useage)
-        - [Run Project](#run-projectl)
+        - [Run Project](#run-project)
         - [Listen Queue](#listen-queue)
         - [Run server.js](#run-server.js)
         - [Create Cron Job](#create-cron-job)
