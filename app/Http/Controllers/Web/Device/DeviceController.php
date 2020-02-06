@@ -134,7 +134,7 @@ class DeviceController extends Controller
         $activity->link = route('web.devices.show', $device->id);
         $activity->save();
 
-        return redirect()->route('web.devices.index')->with(['success' => 'Successfully created new device']);
+        return redirect()->route('web.devices.show', $device->id)->with(['success' => 'Successfully created new device']);
     }
 
     /**
@@ -314,6 +314,11 @@ class DeviceController extends Controller
      */
     public function destroy(Device $device)
     {
+        // delete image
+        if (\File::exists($device->image_fullpath)) {
+            \File::delete($device->image_fullpath);
+        }
+
         Value::where('component_id', [Component::where('device_id', $device->id)->pluck('_id')]);
         Component::where('device_id', $device->id)->delete();
         Endpoint::where('device_id', $device->id)->delete();
