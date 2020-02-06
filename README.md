@@ -7,6 +7,9 @@ Dinamiot merupakan web dashboard dan web server untuk monitoring perangkat IoT s
         - [Update Composer](#update-composer)
         - [Install NPM Package](#install-npm-package)
         - [Configure Env](#configure-env)
+        - [Finishing](#finishing)
+    - [Useage](#useage)
+        - [Laravel 
         
 ## Installation
 Pastikan anda sudah memiliki MongoDB PHP Driver. Jika anda belum memiliki, silahkan melihat petunjuk instalasi di http://php.net/manual/en/mongodb.installation.php
@@ -39,6 +42,8 @@ $ npm install dotenv
 ### Configure Env
 Pada file ```.env.example```, ubah nama file tersebut menjadi ```.env```.
 
+*Anda dapat melewati langkah ini jika nilai - nilai yang ada di file ```.env``` ini tidak memiliki masalah pada sistem operasi anda.
+
 Lakukan konfigurasi database pada file .env berikut jika terdapat ketidak sesuaian dengan konfigurasi database pada sistem anda.
 ```
 DB_CONNECTION=mongodb
@@ -57,4 +62,17 @@ REDIS_PORT=6379
 Anda dapat mengubah nilai port pada ```SOCKET_PORT``` jika nilai PORT pada file .env ini sudah digunakan di sistem operasi anda.
 ```
 SOCKET_PORT=1997
+```
+### Finishing
+Setelah melakukan konfigurasi pada file ```.env```, jalankan perintah berikut ini pada command line:
+- Clear config and cache laravel
+```
+$ php artisan config:cache
+```
+```
+$ php artisan config:clear
+```
+- Migrating database
+```
+$ php artisan migrate
 ```
