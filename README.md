@@ -68,8 +68,7 @@ Setelah melakukan konfigurasi pada file ```.env```, jalankan perintah berikut in
 - Clear config and cache laravel
 ```
 $ php artisan config:cache
-```
-```
+
 $ php artisan config:clear
 ```
 - Migrating database
