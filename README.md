@@ -10,9 +10,10 @@ Dinamiot is a web dashboard and web server for monitoring realtime IoT devices. 
         - [Configure Env](#configure-env)
         - [Finishing](#finishing)
     - [Useage](#useage)
-        - [Serving Laravel](#serving-laravel)
+        - [Run Project](#run-projectl)
         - [Listen Queue](#listen-queue)
         - [Run server.js](#run-server.js)
+        - [Create Cron Job](#create-cron-job)
         
 ## Installation
 Make sure you have installed MongoDB, MongoDB PHP Driver, and NPM. If you don't have it, please see the installation instructions on the following links:
@@ -42,24 +43,29 @@ $ npm install dotenv
 ```
 ### Configure Env
 Rename ```.env.example``` file to ```.env```
-
-*you can skip this step if the values in the ```.env``` file have no problems with your operating system environment
-
+#### Configure App Url
+fill in the APP_URL value according to your project host.
+```
+APP_URL=
+```
+#### Configure database
 Configure the database in the ```.env``` file if there is a conflict with the database configuration on your operating system.
 ```
 DB_CONNECTION=mongodb
 DB_HOST=127.0.0.1
 DB_PORT=27017
-DB_DATABASE=db_devices_monitoring
+DB_DATABASE=db_dinamiot
 DB_USERNAME=
 DB_PASSWORD=
 ```
+#### Configure redis
 Configure the redis if there is a conflict with the redis configuration on your operating system.
 ```
 REDIS_HOST=127.0.0.1
 REDIS_PASSWORD=null
 REDIS_PORT=6379
 ```
+#### Configure socket port
 You can change the port value at ```SOCKET_PORT``` if the port value in this ```.env``` file is already used in your operating system.
 ```
 SOCKET_PORT=1997
@@ -77,7 +83,7 @@ $ php artisan config:clear
 $ php artisan migrate
 ```
 ## Useage
-### Serving Laravel
+### Run Project
 To run this project, you can use virtual host or run command ```serve``` in the Artisan command as below:
 ```
 $ php artisan server
@@ -91,4 +97,9 @@ $ php artisan queue:listen
 In order for the data to be displayed directly in real time, run the ```server.js``` file with the following command:
 ```
 $ node server.js
+```
+### Create Cron Job
+A cron job is required to check the status of the device. if the device does not make a request during a predetermined time interval with an additional tolerance of 30 seconds, then the status of the device will be changed to disconnected.
+```
+* * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
 ```
