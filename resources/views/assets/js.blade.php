@@ -1,6 +1,7 @@
 <!-- BEGIN VENDOR JS-->
 <script src="{{ asset("") }}app-assets/js/core/libraries/jquery.min.js" type="text/javascript"></script>
 <script src="{{ asset("") }}app-assets/vendors/js/ui/tether.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="{{ asset("") }}app-assets/js/core/libraries/bootstrap.min.js" type="text/javascript"></script>
 <script src="{{ asset("") }}app-assets/vendors/js/ui/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
 <script src="{{ asset("") }}app-assets/vendors/js/ui/unison.min.js" type="text/javascript"></script>
