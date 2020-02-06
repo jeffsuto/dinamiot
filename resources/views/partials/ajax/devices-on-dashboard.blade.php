@@ -27,13 +27,13 @@
                     </ul>
                 </div>
             </div>
-            <div class="card-body">
+            <div class="card-body height-250">
                 <a href="{{ route('web.devices.show', $device->id) }}">
-                    <img class="img-fluid" src="{{ ($device->image_path ?: asset("app-assets/images/portfolio/portfolio-1.jpg")) }}" alt="{{ $device->name }}">
+                    <img class="img-fluid" style="height:100%; object-fit: cover;" src="{{ ($device->image_path ?: asset("app-assets/images/portfolio/portfolio-1.jpg")) }}" alt="{{ $device->name }}">
                 </a>
-                <div class="card-block">
+                {{-- <div class="card-block white">
                     {{ $device->description }}
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
