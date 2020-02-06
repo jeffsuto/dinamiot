@@ -61,8 +61,12 @@ class DeviceController extends Controller
             $file = $request->file('image');
             $filename = time().'-'.str_replace(' ', '-', str_replace(' ', '_', $request->name)).'.'.$file->getClientOriginalExtension();
             $fullpath = public_path().'/assets/images/devices';
+
+            // check if directory is doesn't exists
+            \File::isDirectory($fullpath) or \File::makeDirectory($fullpath, 0777, true, true);
             
-            $device->image_path = asset("/assets/images/devices/$filename");
+            $device->image_fullpath = $fullpath."/$filename";
+            $device->image_url = asset("/assets/images/devices/$filename");
 
             $file->move($fullpath, $filename);
         }
@@ -185,7 +189,16 @@ class DeviceController extends Controller
             $filename = time().'-'.str_replace(' ', '-', str_replace(' ', '_', $request->name)).'.'.$file->getClientOriginalExtension();
             $fullpath = public_path().'/assets/images/devices';
             
-            $device->image_path = asset("/assets/images/devices/$filename");
+            // delete old image
+            if (\File::exists($device->image_fullpath)) {
+                \File::delete($device->image_fullpath);
+            }
+
+            // check if directory is doesn't exists
+            \File::isDirectory($fullpath) or \File::makeDirectory($fullpath, 0777, true, true);
+
+            $device->image_fullpath = $fullpath."/$filename";
+            $device->image_url = asset("/assets/images/devices/$filename");
 
             $file->move($fullpath, $filename);
         }

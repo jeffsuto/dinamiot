@@ -105,7 +105,7 @@
         socket.on('activity', function(data){
             loadNewNotification();
             notificationCount();
-
+            
             var notification = new Notification(data.data.title, {
                 icon:'<img src="https://img.icons8.com/pastel-glyph/64/000000/school-1-1.png">',
                 body: data.data.message,

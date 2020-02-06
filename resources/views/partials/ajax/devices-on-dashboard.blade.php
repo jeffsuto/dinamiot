@@ -7,17 +7,19 @@
                 </b>
                 <div class="heading-elements">
                     <ul class="list-inline mb-0">
-                        @switch($device->alert)
-                            @case("normal")
-                                <li class="glow-success"><span class="tag tag-pill tag-success">Normal</span></i></li>
-                                @break
-                            @case("warning")
-                                <li class="glow-warning"><span class="tag tag-pill tag-warning">Warning</span></i></li>
-                                @break
-                            @case("danger")
-                                <li class="glow-danger"><span class="tag tag-pill tag-danger">danger</span></i></li>
-                                @break
-                        @endswitch
+                        @if ($device->state == 1)
+                            @switch($device->alert)
+                                @case("normal")
+                                    <li class="glow-success"><span class="tag tag-pill tag-success">Normal</span></i></li>
+                                    @break
+                                @case("warning")
+                                    <li class="glow-warning"><span class="tag tag-pill tag-warning">Warning</span></i></li>
+                                    @break
+                                @case("danger")
+                                    <li class="glow-danger"><span class="tag tag-pill tag-danger">danger</span></i></li>
+                                    @break
+                            @endswitch
+                        @endif
                         
                         @if ($device->state)
                             <li><span class="tag tag-pill tag-success state-{{ $device->id }}">Connected</span></li>
@@ -29,7 +31,7 @@
             </div>
             <div class="card-body height-250">
                 <a href="{{ route('web.devices.show', $device->id) }}">
-                    <img class="img-fluid" style="height:100%; object-fit: cover;" src="{{ ($device->image_path ?: asset("app-assets/images/portfolio/portfolio-1.jpg")) }}" alt="{{ $device->name }}">
+                    <img class="img-fluid" style="height:100%; object-fit: cover;" src="{{ ($device->image_url ?: asset("app-assets/images/portfolio/portfolio-1.jpg")) }}" alt="{{ $device->name }}">
                 </a>
                 {{-- <div class="card-block white">
                     {{ $device->description }}

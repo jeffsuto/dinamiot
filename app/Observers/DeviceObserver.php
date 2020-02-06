@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Models\Device;
+use App\Models\Activity;
 
 class DeviceObserver
 {

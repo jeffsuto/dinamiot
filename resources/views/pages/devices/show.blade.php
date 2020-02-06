@@ -11,6 +11,15 @@
             <strong>Well done!</strong> {!! session('success') !!}.
         </div>
     @endif
+    
+    <div id="alert-disconnected">
+        @if (!$device->state)
+            <div class="alert alert-danger alert-dismissible fade in mb-2" role="alert">
+                <strong>This device is disconnected</strong>
+            </div>
+        @endif
+    </div>
+
     <div class="row">
         @foreach ($device->components()->where('type', 'digital')->get() as $component)
             @include('components.panels.digital-panel', ['component' => $component])
@@ -25,10 +34,20 @@
 
 @push('script')
     <script>
-    
+        
+        socket.on('device', function(data){
+            let html =  '<div class="alert alert-danger alert-dismissible fade in mb-2" role="alert">'+
+                            '<strong>This device is disconnected</strong>'+
+                        '</div>';
+            if (data.data.state) {
+                $('#alert-disconnected').html("");
+            } else {
+                $('#alert-disconnected').html(html);
+            }
+        });
+
         // realtime update on component
         socket.on('component', function(data){
-            console.log(data.data.type);
             
             if (data.data.type == "analog") {
                 // update current analog value

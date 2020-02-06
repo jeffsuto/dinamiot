@@ -3,6 +3,14 @@
 @section('breadcrumbs', Breadcrumbs::render('devices.show.component', $component))
 
 @section('content')
+    <div id="alert-disconnected">
+        @if (!$component->device->state)
+            <div class="alert alert-danger alert-dismissible fade in mb-2" role="alert">
+                <strong>This device is disconnected</strong>
+            </div>
+        @endif
+    </div>
+
     <div class="row">
         <div class="col-lg-12">
             <div class="card bg-blue-grey bg-darken-4 grey lighten-1">
@@ -129,6 +137,17 @@
 @push('script')
     <script>
         $(document).ready(function(){
+            // if device is diconnected
+            socket.on('device', function(data){
+                let html =  '<div class="alert alert-danger alert-dismissible fade in mb-2" role="alert">'+
+                                '<strong>This device is disconnected</strong>'+
+                            '</div>';
+                if (data.data.state) {
+                    $('#alert-disconnected').html("");
+                } else {
+                    $('#alert-disconnected').html(html);
+                }
+            });
 
             // init data
             var table = $('.my-datatables-ajax').DataTable({

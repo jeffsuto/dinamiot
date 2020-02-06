@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\V1\Component;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 use App\Models\Component;
 use App\Models\Value;
@@ -118,6 +119,7 @@ class ValueController extends Controller
         
         // update data device
         $device = Device::where('serial_number', $device_serial_number)->first();
+        $device->last_active_date = Carbon::now();
         $device->state = 1;
         if ($alert_count < count($component_values) && $alert_count != 0) {
             $device->alert = "warning";

@@ -14,7 +14,9 @@ class ActivityObserver
      */
     public function saved(Activity $activity)
     {
-        event(new \App\Events\ActivityEvent($activity));
+        if ($activity->status == "new") {
+            event(new \App\Events\ActivityEvent($activity));
+        }
     }
 
     /**
