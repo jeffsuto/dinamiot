@@ -1,6 +1,6 @@
 # Dinamiot
 ![alt text](https://images.pexels.com/photos/3691907/pexels-photo-3691907.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
-Dinamiot merupakan web dashboard dan web server untuk monitoring perangkat IoT secara realtime. Dengan menambahkan perangkat baru di website, pengguna akan mendapatkan endpoint API untuk digunakan sebagai akses perangkat IoT ke web server. Pada web ini, setiap perangkat memilki dashboardnya sendiri. Terdapat dua kategori untuk komponen perangkat, yaitu komponen dengan jenis analog dan digital, contohnya: Generator memiliki 3 komponen yang akan dimonitoring, yaitu: Suhu (analog), Bahan Bakar (analog), Kipas pendingin (digital). Pada dashboard Generator, komponen suhu dan bahan bakar akan ditampilkan dalam bentu Chart Line dan Gauge Chart, sedangkan komponen kipas pendingin akan ditampilkan dalam bentuk panel yang menunjukan status ON atau OFF.
+Dinamiot is a web dashboard and web server for monitoring realtime IoT devices. By adding a new device on the website, users will get an API endpoint to be used as an IoT device access to the web server. On this website, each device has its own dashboard. There are two categories of device components, namely component with analog and digital types, for example: The generator has three components to be monitored are: Temperature (analog), Fuel (analog), cooling fan (digital). On the Generator dashboard, the temperature and fuel components will be displayed in the form of a Chart Line and Gauge Chart, while the cooling fan components will be displayed in a panel that shows the status of ON or OFF.
 
 - [Dinamiot](#dinamiot)
     - [Installation](#installation)
@@ -15,7 +15,7 @@ Dinamiot merupakan web dashboard dan web server untuk monitoring perangkat IoT s
         - [Run server.js](#run-server.js)
         
 ## Installation
-Pastikan anda sudah menginstall MongoDB, MongoDB PHP Driver, dan NPM. Jika anda belum memiliki, silahkan melihat petunjuk instalasi pada link berikut ini:
+Make sure you have installed MongoDB, MongoDB PHP Driver, and NPM. If you don't have it, please see the installation instructions on the following links:
 - MongoDB (https://docs.mongodb.com/manual/installation/)
 - MongoDB PHP Driver (http://php.net/manual/en/mongodb.installation.php)
 - NPM (https://www.npmjs.com/get-npm)
@@ -25,14 +25,14 @@ Pastikan anda sudah menginstall MongoDB, MongoDB PHP Driver, dan NPM. Jika anda 
 $ https://github.com/jeffsuto/dinamiot.git
 ```
 ### Update Composer
-Setelah melakukan cloning project, masuklah ke direktori project dinamiot. Setelah masuk ke dalam direktori, jalankan perintah dibawah ini untuk mengupdate package laravel.
+After cloning the project, enter the dinamiot project directory. After entering the directory, run the following command to update the laravel package.
 
-Pastikan anda sudah menginstall composer. Jika anda belum menginstal, silahkan melihat petunjuk intalasi di https://getcomposer.org/doc/00-intro.md.
+Make sure you have installed composer. If you have not installed it, please see the installation instructions at https://getcomposer.org/doc/00-intro.md.
 ```
 $ composer update
 ```
 ### Install NPM Package
-Beberapa package node.js dibutuhkan pada project ini untuk proses menampilkan secara realtime data. Package node.js yang dibutuhkan antara lain:
+Some node.js packages are needed in this project for the process of displaying data in realtime. The required node.js packages include:
 ```
 $ npm install socket.io
 
@@ -41,11 +41,11 @@ $ npm install redis
 $ npm install dotenv
 ```
 ### Configure Env
-Pada file ```.env.example```, ubah nama file tersebut menjadi ```.env```.
+Rename ```.env.example``` file to ```.env```
 
-*Anda dapat melewati langkah ini jika nilai - nilai yang ada di file ```.env``` ini tidak memiliki masalah pada sistem operasi anda.
+*you can skip this step if the values in the ```.env``` file have no problems with your operating system environment
 
-Lakukan konfigurasi database pada file .env berikut jika terdapat ketidak sesuaian dengan konfigurasi database pada sistem anda.
+Configure the database in the ```.env``` file if there is a conflict with the database configuration on your operating system.
 ```
 DB_CONNECTION=mongodb
 DB_HOST=127.0.0.1
@@ -54,18 +54,18 @@ DB_DATABASE=db_devices_monitoring
 DB_USERNAME=
 DB_PASSWORD=
 ```
-Lakukan konfigurasi redis jika terdapat ketidak sesuaian dengan konfigurasi redis pada sistem anda. 
+Configure the redis if there is a conflict with the redis configuration on your operating system.
 ```
 REDIS_HOST=127.0.0.1
 REDIS_PASSWORD=null
 REDIS_PORT=6379
 ```
-Anda dapat mengubah nilai port pada ```SOCKET_PORT``` jika nilai PORT pada file .env ini sudah digunakan di sistem operasi anda.
+You can change the port value at ```SOCKET_PORT``` if the port value in this ```.env``` file is already used in your operating system.
 ```
 SOCKET_PORT=1997
 ```
 ### Finishing
-Setelah melakukan konfigurasi pada file ```.env```, jalankan perintah berikut ini pada command line:
+After configuring the ```.env``` file, run the following command in the command line:
 - Clear config and cache laravel
 ```
 $ php artisan config:cache
@@ -78,17 +78,17 @@ $ php artisan migrate
 ```
 ## Useage
 ### Serving Laravel
-Untuk menjalankan project ini, anda dapat menggunakan virtual host atau dapat menjalankan perintah ```serve``` pada Artisan Command seperti dibawah ini:
+To run this project, you can use virtual host or run command ```serve``` in the Artisan command as below:
 ```
 $ php artisan server
 ```
 ### Listen Queue
-Setelah project dapat dijalankan, langkah selanjutnya ialah mengaktifkan Queue pada framework Laravel dengan menjalankan perintah berikut ini:
+After the project can be ran, the next step is activating Queue on the Laravel framework with run the following command:
 ```
 $ php artisan queue:listen
 ```
 ### Run server.js
-Agar data yang ditampilkan lansung secara realtime, jalankan file ```server.js``` dengan perintah perikut ini:
+In order for the data to be displayed directly in real time, run the ```server.js``` file with the following command:
 ```
 $ node server.js
 ```
