@@ -9,10 +9,15 @@ Dinamiot merupakan web dashboard dan web server untuk monitoring perangkat IoT s
         - [Configure Env](#configure-env)
         - [Finishing](#finishing)
     - [Useage](#useage)
-        - [Laravel 
+        - [Serving Laravel](#serving-laravel)
+        - [Listen Queue](#listen-queue)
+        - [Run server.js](#run-server.js)
         
 ## Installation
-Pastikan anda sudah memiliki MongoDB PHP Driver. Jika anda belum memiliki, silahkan melihat petunjuk instalasi di http://php.net/manual/en/mongodb.installation.php
+Pastikan anda sudah menginstall MongoDB, MongoDB PHP Driver, dan NPM. Jika anda belum memiliki, silahkan melihat petunjuk instalasi pada link berikut ini:
+- MongoDB (https://docs.mongodb.com/manual/installation/)
+- MongoDB PHP Driver (http://php.net/manual/en/mongodb.installation.php)
+- NPM (https://www.npmjs.com/get-npm)
 
 ### Clone Project
 ```
@@ -74,4 +79,20 @@ $ php artisan config:clear
 - Migrating database
 ```
 $ php artisan migrate
+```
+## Useage
+### Serving Laravel
+Untuk menjalankan project ini, anda dapat menggunakan virtual host atau dapat menjalankan perintah ```serve``` pada Artisan Command seperti dibawah ini:
+```
+$ php artisan server
+```
+### Listen Queue
+Setelah project dapat dijalankan, langkah selanjutnya ialah mengaktifkan Queue pada framework Laravel dengan menjalankan perintah berikut ini:
+```
+$ php artisan queue:listen
+```
+### Run server.js
+Agar data yang ditampilkan lansung secara realtime, jalankan file ```server.js``` dengan perintah perikut ini:
+```
+$ node server.js
 ```
