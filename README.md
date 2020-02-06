@@ -32,16 +32,11 @@ $ composer update
 ```
 ### Install NPM Package
 Beberapa package node.js dibutuhkan pada project ini untuk proses menampilkan secara realtime data. Package node.js yang dibutuhkan antara lain:
-- socket.io
 ```
 $ npm install socket.io
-```
-- redis
-```
+
 $ npm install redis
-```
-- dotenv
-```
+
 $ npm install dotenv
 ```
 ### Configure Env
