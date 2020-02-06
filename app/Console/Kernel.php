@@ -34,7 +34,7 @@ class Kernel extends ConsoleKernel
             
             foreach ($devices as $device) {
                 $last_active = $device->last_active_date;
-                $timeout = 5;
+                $timeout = $device->endpoint->request_interval + 15;
                 $datetime_now = Carbon::now();
 
                 if ($last_active->addSeconds($timeout)->lt($datetime_now)) {
