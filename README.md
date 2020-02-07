@@ -24,23 +24,23 @@ Make sure you have installed MongoDB, MongoDB PHP Driver, Redis, and NPM. If you
 
 ### Clone Project
 ```
-$ git clone https://github.com/jeffsuto/dinamiot.git
+git clone https://github.com/jeffsuto/dinamiot.git
 ```
 ### Update Composer
 After cloning the project, enter the dinamiot project directory. After entering the directory, run the following command to update the laravel package.
 
 Make sure you have installed composer. If you have not installed it, please see the installation instructions at https://getcomposer.org/doc/00-intro.md.
 ```
-$ composer update
+composer update
 ```
 ### Install NPM Package
 Some node.js packages are needed in this project for the process of displaying data in realtime. The required node.js packages include:
 ```
-$ npm install socket.io
+npm install socket.io
 
-$ npm install redis
+npm install redis
 
-$ npm install dotenv
+npm install dotenv
 ```
 ### Configure Env
 Rename ```.env.example``` file to ```.env```
@@ -75,29 +75,29 @@ SOCKET_PORT=3030
 After configuring the ```.env``` file, run the following command in the command line:
 - Clear config and cache laravel
 ```
-$ php artisan config:cache
+php artisan config:cache
 
-$ php artisan config:clear
+php artisan config:clear
 ```
 - Migrating database
 ```
-$ php artisan migrate
+php artisan migrate
 ```
 ## Useage
 ### Run Project
 To run this project, you can use virtual host or run command ```serve``` in the Artisan command as below:
 ```
-$ php artisan server
+php artisan server
 ```
 ### Listen Queue
 After the project can be ran, the next step is activating Queue on the Laravel framework with run the following command:
 ```
-$ php artisan queue:listen
+php artisan queue:listen
 ```
 ### Run server.js
 In order for the data to be displayed directly in real time, run the ```server.js``` file with the following command:
 ```
-$ node server.js
+node server.js
 ```
 ### Create Cron Job
 A cron job is required to check the status of the device. if the device does not make a request during a predetermined time interval with an additional tolerance of 30 seconds, then the status of the device will be changed to disconnected.
