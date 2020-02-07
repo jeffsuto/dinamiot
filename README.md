@@ -16,9 +16,10 @@ Dinamiot is a web dashboard and web server for monitoring realtime IoT devices. 
         - [Create Cron Job](#create-cron-job)
         
 ## Installation
-Make sure you have installed MongoDB, MongoDB PHP Driver, and NPM. If you don't have it, please see the installation instructions on the following links:
+Make sure you have installed MongoDB, MongoDB PHP Driver, Redis, and NPM. If you don't have it, please see the installation instructions on the following links:
 - MongoDB (https://docs.mongodb.com/manual/installation/)
 - MongoDB PHP Driver (http://php.net/manual/en/mongodb.installation.php)
+- Redis(https://redis.io/topics/quickstart)
 - NPM (https://www.npmjs.com/get-npm)
 
 ### Clone Project
