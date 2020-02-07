@@ -6,27 +6,25 @@
                     <a href="{{ route('web.devices.show', $device->id) }}" class="info">{{ $device->name }}</a>
                 </b>
                 <div class="heading-elements">
-                    <ul class="list-inline mb-0">
-                        @if ($device->state == 1)
-                            @switch($device->alert)
-                                @case("normal")
-                                    <li class="glow-success"><span class="tag tag-pill tag-success">Normal</span></i></li>
-                                    @break
-                                @case("warning")
-                                    <li class="glow-warning"><span class="tag tag-pill tag-warning">Warning</span></i></li>
-                                    @break
-                                @case("danger")
-                                    <li class="glow-danger"><span class="tag tag-pill tag-danger">danger</span></i></li>
-                                    @break
-                            @endswitch
-                        @endif
-                        
-                        @if ($device->state)
-                            <li><span class="tag tag-pill tag-success state-{{ $device->id }}">Connected</span></li>
-                        @else
-                            <li><span class="tag tag-pill tag-default state-{{ $device->id }}">Disconnected</span></li>
-                        @endif
-                    </ul>
+                    @if ($device->state == 1)
+                        @switch($device->alert)
+                            @case("normal")
+                                <span class="tag tag-pill tag-success glow-success">Normal</span>
+                                @break
+                            @case("warning")
+                                <span class="tag tag-pill tag-warning glow-warning">Warning</span>
+                                @break
+                            @case("danger")
+                                <span class="tag tag-pill tag-danger glow-danger">danger</span>
+                                @break
+                        @endswitch
+                    @endif
+                    
+                    @if ($device->state)
+                        <span class="tag tag-pill tag-success state-{{ $device->id }}">Connected</span>
+                    @else
+                        <span class="tag tag-pill tag-default state-{{ $device->id }}">Disconnected</span>
+                    @endif
                 </div>
             </div>
             <div class="card-body height-250">
