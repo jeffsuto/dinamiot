@@ -68,7 +68,7 @@ REDIS_PORT=6379
 #### Configure socket port
 You can change the port value at ```SOCKET_PORT``` if the port value in this ```.env``` file is already used in your operating system.
 ```
-SOCKET_PORT=1997
+SOCKET_PORT=3030
 ```
 ### Finishing
 After configuring the ```.env``` file, run the following command in the command line:
