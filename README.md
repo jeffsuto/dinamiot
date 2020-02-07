@@ -23,7 +23,7 @@ Make sure you have installed MongoDB, MongoDB PHP Driver, and NPM. If you don't 
 
 ### Clone Project
 ```
-$ https://github.com/jeffsuto/dinamiot.git
+$ git clone https://github.com/jeffsuto/dinamiot.git
 ```
 ### Update Composer
 After cloning the project, enter the dinamiot project directory. After entering the directory, run the following command to update the laravel package.
