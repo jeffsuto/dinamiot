@@ -35,5 +35,7 @@
         console.log(data);
     });
     
-    $('.my-datatables').DataTable();
+    $('.my-datatables').DataTable({
+        "scrollX": true,
+    });
 </script>
