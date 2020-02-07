@@ -16,14 +16,8 @@
             <h4 class="card-title">
                 <a href="{{ route('web.devices.create') }}" class="btn btn-success">Create new device</a>
             </h4>
-            <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
-            <div class="heading-elements">
-                <ul class="list-inline mb-0">
-                    <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
-                </ul>
-            </div>
         </div>
-        <div class="card-body collapse in">
+        <div class="card-body">
             <div class="card-block">
                 <table class="my-datatables table">
                     <thead>

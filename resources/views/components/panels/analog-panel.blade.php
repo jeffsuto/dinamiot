@@ -7,7 +7,7 @@
                     <a href="{{ route('web.devices.component', $component->id) }}" class="btn btn-info">View detail</a>
                 </div>
             </div>
-            <div class="card-body collapse in">
+            <div class="card-body">
                 <div class="card-block">
                     {{-- Chart --}}
                     @include('components.charts.live-chart', [

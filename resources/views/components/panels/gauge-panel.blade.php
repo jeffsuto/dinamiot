@@ -2,16 +2,14 @@
     <div class="card-header">
         {{ $component->name }} Status
         <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
-        <div class="heading-elements">
-            <ul class="list-inline mb-0 label-alert{{ $component->id }}">
-                @if(empty($component->value))
-                    <li><span class="tag tag-pill tag-danger">Error</span></i></li>
-                @elseif ($component->value > $component->max_value || $component->value < $component->min_value)
-                    <li><span class="tag tag-pill tag-warning">Warning</span></i></li>
-                @else
-                    <li><span class="tag tag-pill tag-success">Normal</span></i></li>
-                @endif
-            </ul>
+        <div class="heading-elements label-alert{{ $component->id }}">
+            @if(empty($component->value))
+                <span class="tag tag-pill tag-danger">Error</span></i>
+            @elseif ($component->value > $component->max_value || $component->value < $component->min_value)
+                <span class="tag tag-pill tag-warning">Warning</span>
+            @else
+                <span class="tag tag-pill tag-success">Normal</span>
+            @endif
         </div>
     </div>
     <div class="card-body collapse in">
