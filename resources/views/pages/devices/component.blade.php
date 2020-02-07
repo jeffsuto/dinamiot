@@ -223,11 +223,11 @@
                     // update label state
                     let label = "";
                     if(data.data.value == "-")
-                        label = '<li><span class="tag tag-pill tag-danger">Error</span></i></li>';
+                        label = '<span class="tag tag-pill tag-danger">Error</span>';
                     else if (data.data.value > data.data.max_value || data.data.value < data.data.min_value)
-                        label = '<li><span class="tag tag-pill tag-warning">Warning</span></i></li>';
+                        label = '<span class="tag tag-pill tag-warning">Warning</span>';
                     else
-                        label = '<li><span class="tag tag-pill tag-success">Normal</span></i></li>';
+                        label = '<span class="tag tag-pill tag-success">Normal</span>';
 
                     $('.label-alert'+data.data._id).html(label);
                 }
