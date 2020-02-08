@@ -160,7 +160,7 @@
                     }
                 },
                 "scrollX": true,
-                "autoWidth": false
+                "autoWidth": false,
                 "columnDefs": [
                     { className: "text-xs-center", "targets": [ 0,2,3,4 ] }
                 ]
