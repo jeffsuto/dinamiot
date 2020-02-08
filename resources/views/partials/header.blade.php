@@ -61,7 +61,7 @@
                                     <span class="notification-tag tag tag-default tag-danger float-xs-right m-0 notif-count"></span>
                                 </h6>
                             </li>
-                            <li class="list-group scrollable-container notification-container">
+                            <li class="list-group scrollable-container notification-container ">
                                 
                             </li>
                             <li class="dropdown-menu-footer"><a href="javascript:void(0)" class="dropdown-item text-muted text-xs-center read-all-btn">Read all notifications</a></li>

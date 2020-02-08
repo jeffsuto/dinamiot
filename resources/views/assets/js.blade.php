@@ -37,5 +37,6 @@
     
     $('.my-datatables').DataTable({
         "scrollX": true,
+        "autoWidth": false
     });
 </script>
